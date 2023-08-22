@@ -1,0 +1,65 @@
+class Solution {
+    // Finds decimal value of a given roman numeral
+    public int romanToDecimal(String str) {
+        // code here
+        int len = str.length();
+        int sum = 0;
+        int I,i=1;int V,v=5;int X,x=10;int L,l=50;int C,c=100;int D,d=500;int M,m=1000;
+        
+        if(len ==1){
+            char ch = str.charAt(0);
+            int value = checkCharacter(ch);
+            sum = value;
+        }
+        else {
+            for(int k=0;k<len;k++){
+            char currchar = str.charAt(k);
+            int currentvalue =checkCharacter(currchar);
+            if(k+1<len){
+                char nextchar = str.charAt(k+1);
+                int nextvalue = checkCharacter(nextchar);
+                if(currentvalue>=nextvalue){
+                sum += currentvalue;
+            }
+            else {
+                sum +=  nextvalue - currentvalue;
+                k++;
+            }
+            }
+            else{
+                sum = sum + currentvalue;
+            
+            }
+            
+        }
+        }
+        return sum;
+    }
+    
+    private int checkCharacter(char ch){
+       int val =0;
+        if(ch=='V'||ch=='v'){
+                val =5;
+         } if(ch=='X'||ch=='x'){
+                val =10;
+         }
+          if(ch=='I'||ch=='i'){
+                val =1;
+         }
+          if(ch=='L'||ch=='l'){
+                val =50;
+         }
+          if(ch=='C'||ch=='c'){
+                val =100;
+         }
+           if(ch=='D'||ch=='d'){
+                val =500;
+         }
+           if(ch=='M'||ch=='m'){
+                val =1000;
+         }
+         
+         return val;
+    }
+    
+}
