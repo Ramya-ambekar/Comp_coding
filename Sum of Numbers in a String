@@ -1,0 +1,37 @@
+class Solution
+{
+    //Function to calculate sum of all numbers present in a string.
+    public static long findSum(String str)
+    {
+        int strlen = str.length();
+        
+        String number ="";
+        int result = 0;
+        
+        for(int j= 0;j<strlen;j++){
+           if(Character.isDigit(str.charAt(j))){
+               number += str.charAt(j);
+           }else{
+               if(!number.equals("")){
+                   result += Integer.parseInt(number);
+                    number="";
+               }
+           }
+        }
+        // Add the last number if it exists
+        if (!number.equals("")) {
+            result += Integer.parseInt(number);
+        }
+        
+        return result;
+    }
+}
+
+EXAMPLE :
+
+Input:
+str = 1abc23
+Output: 24
+Explanation: 1 and 23 are numbers in the
+string which is added to get the sum as
+24.
