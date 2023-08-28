@@ -1,0 +1,61 @@
+Input:
+S = Bawds jog, flick quartz, vex nymph
+Output: 1
+Explanation: In the given input, there
+are all the letters of the English
+alphabet. Hence, the output is 1.
+
+
+//METHOD 1 using HashSet. As this is an Unordered set with unique elements and Best Time complexity
+
+class Solution
+{
+    //Function to check if a string is Pangram or not.
+    public static boolean checkPangram  (String str) {
+        // your code herea
+        String s = str.replaceAll("[,\\-\\;\\s]","");
+        s = s.toLowerCase();
+        HashSet<Character> set = new HashSet<>();
+        for(int i=0;i<s.length();i++){
+            set.add(s.charAt(i));
+        }
+        
+        if(set.size()!=26){
+            return false;
+        }
+        return true;
+    
+    }
+}
+
+
+
+//METHOD 2 using Arrays
+
+class Solution
+{
+    //Function to check if a string is Pangram or not.
+    public static boolean checkPangram  (String str) {
+        // your code herea
+        String s = str.replaceAll("[,\\-\\;\\s]","");
+        s = s.toLowerCase();
+        boolean[] alphabets = new boolean[26];
+        
+        //Arrays.sort(alphabets);
+        
+        for(Character ch : s.toCharArray()){
+           int index = ch - 'a';
+            alphabets[index] = true;
+        }
+        
+        for(boolean present : alphabets){
+          if(!present){
+              return false;
+          }
+        }
+        
+  return true;
+ 
+    
+    }
+}
