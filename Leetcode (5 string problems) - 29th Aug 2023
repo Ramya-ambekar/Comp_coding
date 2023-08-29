@@ -1,0 +1,143 @@
+1108 : Defanging an IP Address
+
+Example 1:
+
+Input: address = "1.1.1.1"
+Output: "1[.]1[.]1[.]1"
+
+class Solution {
+    public String defangIPaddr(String address) {
+        String addr = "";
+        for(int i=0;i<address.length();i++){
+            if(address.charAt(i)=='.'){
+            addr = address.replace(String.valueOf(address.charAt(i)),String.valueOf("[.]"));
+            }
+        }
+        
+        return addr;
+    }
+}
+
+
+
+2011. Final Value of Variable After Performing Operations
+
+Example 1:
+
+Input: operations = ["--X","X++","X++"]
+Output: 1
+Explanation: The operations are performed as follows:
+Initially, X = 0.
+--X: X is decremented by 1, X =  0 - 1 = -1.
+X++: X is incremented by 1, X = -1 + 1 =  0.
+X++: X is incremented by 1, X =  0 + 1 =  1.
+
+class Solution {
+    public int finalValueAfterOperations(String[] operations) {
+     int X =0; 
+     for(String s : operations){
+         if(s.equals("--X")||s.equals("X--")){
+            X = X - 1;
+         }else{
+             X = X + 1;
+         }
+     }
+     return X;   
+    }
+}
+
+
+
+
+1678. Goal Parser Interpretation
+
+Example 1:
+
+Input: command = "G()(al)"
+Output: "Goal"
+Explanation: The Goal Parser interprets the command as follows:
+G -> G
+() -> o
+(al) -> al
+The final concatenated result is "Goal".
+
+
+class Solution {
+    public String interpret(String command) {
+        String result ="";
+        
+        for(int i=0;i<command.length();i++){
+            if(command.charAt(i) == 'G'){
+                result = result+"G";
+            }else if(command.charAt(i) == '(' && command.charAt(i+1) ==')'){
+                 result = result + "o";   
+                 i++;
+            }else if(command.charAt(i) == '(' && command.charAt(i+1) =='a'){
+                 result = result + "al";  
+                 i+=2; 
+            }
+        }
+        return result;
+    }
+}
+
+
+
+2114. Maximum Number of Words Found in Sentences
+
+Example 1:
+
+Input: sentences = ["alice and bob love leetcode", "i think so too", "this is great thanks very much"]
+Output: 6
+Explanation: 
+- The first sentence, "alice and bob love leetcode", has 5 words in total.
+- The second sentence, "i think so too", has 4 words in total.
+- The third sentence, "this is great thanks very much", has 6 words in total.
+Thus, the maximum number of words in a single sentence comes from the third sentence, which has 6 words.
+
+
+class Solution {
+    public int mostWordsFound(String[] sentences) {
+        int max = 0;
+        for(String s : sentences){
+            String[] words = s.split(" ");
+            if(words.length>max){
+             max = words.length;
+            }
+        }
+        return max; 
+    }
+}
+
+
+
+1221. Split a String in Balanced Strings
+
+Example 1:
+
+Input: s = "RLRRRLLRLL"
+Output: 2
+Explanation: s can be split into "RL", "RRRLLRLL", each substring contains same number of 'L' and 'R'.
+Note that s cannot be split into "RL", "RR", "RL", "LR", "LL", because the 2nd and 5th substrings are not balanced.
+
+
+class Solution {
+    public int balancedStringSplit(String s) {
+        int value = 0;
+        int count = 0;
+        HashMap<Character,Integer> map = new HashMap<>();
+        for(Character c : s.toCharArray()){
+            if(c=='R'){
+                count++;
+            }
+            if(c=='L'){
+                count--;
+            }
+            if(count==0){
+                value++;
+            }
+        }
+        return value;
+    }
+}
+
