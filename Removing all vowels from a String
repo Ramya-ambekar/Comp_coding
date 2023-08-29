@@ -1,0 +1,16 @@
+
+class HelloWorld {
+    public static void main(String[] args) {
+        String str = "academyrI";
+        String vowels = "aeiouAEIOU";
+        String res ="";
+    for(char c : str.toCharArray()){
+        if(vowels.indexOf(c)==-1){
+            res = res + c;
+        }
+    }
+    
+    System.out.println(res);
+     
+    }
+}
