@@ -45,3 +45,22 @@ public class Main {
     System.out.print(result);
   }
 }
+
+
+
+Question 3 : Reverse words in a sentence
+
+import java.util.*;
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+public class Main {
+  public static void main(String[] args) {
+    String s = "Scaler topics";
+    String[] words = s.split(" ");
+    for(int i=words.length -1 ;i>=0;i--){
+      System.out.print(words[i]+" ");
+    } 
+    
+  }
+}
+
