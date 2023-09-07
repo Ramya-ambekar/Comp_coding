@@ -22,3 +22,26 @@ Question 1 : Reverse a String
                         System.out.print(rev.toString());
                       }
                     }
+
+
+
+
+Question 2 : Remove Duplicate characters
+
+import java.util.*;
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+public class Main {
+  public static void main(String[] args) {
+    String s = "programming";
+    String result = "";
+	  HashSet<Character> set = new HashSet();
+    for(char c : s.toCharArray()){
+      if(!set.contains(c)){
+        set.add(c);
+        result += String.valueOf(c);
+      }
+    }
+    System.out.print(result);
+  }
+}
