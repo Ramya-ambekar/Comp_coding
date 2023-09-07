@@ -64,3 +64,22 @@ public class Main {
   }
 }
 
+Question 4: Occurence of each character
+import java.util.*;
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+public class Main {
+  public static void main(String[] args) {
+    String s = "environmentalists";
+    HashMap<Character,Integer> map = new HashMap<>();
+    for(char c : s.toCharArray()){
+      if(map.containsKey(c)){
+        map.put(c,(map.get(c)+1));
+      }else{
+        map.put(c,1);
+      }
+    }
+    System.out.print(map);
+    
+  }
+}
