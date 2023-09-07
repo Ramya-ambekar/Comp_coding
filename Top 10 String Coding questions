@@ -139,3 +139,28 @@ Question 5 : First non repeating character
 			}
 			
 			
+Question 6: Occurrences of the character 'a' with a count of how many times it appears in the string
+
+
+import java.util.*;
+import java.util.Map.Entry;
+
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+public class Main {
+  public static void main(String[] args) {
+    String s = "scaLars";
+    StringBuilder res = new StringBuilder();
+    int count = 0;
+    for(char c : s.toCharArray()){
+      if(c=='a'){
+        count = count + 1;
+        res.append(count);
+      }else {
+                res.append(c);
+            }
+    }
+    System.out.print(res);
+    
+  }
+}
