@@ -207,3 +207,17 @@ public class Main {
       System.out.print(new String(chars));  
   }
 }
+
+
+
+Question 9 : Remove whitespaces in a string
+
+import java.util.*;
+public class Main {
+  public static void main(String[] args) {
+      String s = "ro c    k s  t a   r";
+      String res ;
+      res = s.replaceAll("\\s","");
+      System.out.print(res);
+  }
+}
