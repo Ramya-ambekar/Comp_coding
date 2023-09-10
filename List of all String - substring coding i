@@ -1,0 +1,54 @@
+1. Find All Substrings: Given a string, find all possible substrings of it.
+
+2. Longest Substring Without Repeating Characters: Find the length of the longest substring without repeating characters in a given string.
+
+3. Smallest Window in a String Containing All Characters of Another String: Given two strings, find the smallest window in the first string that contains all characters of the second string.
+
+4. Longest Palindromic Substring: Find the longest palindromic substring in a given string.
+
+5. Substring with Concatenation of All Words: Given a string and a list of words, find all starting indices of substring(s) in the string that is a concatenation of each word in the list exactly once.
+
+6. Minimum Window Substring: Given a string S and a string T, find the minimum window in S that will contain all the characters in T.
+
+7. Valid Palindrome: Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.
+
+8. Implement strStr(): Implement strStr() to find the index of the first occurrence of one string (needle) within another (haystack).
+
+9. Group Anagrams: Given an array of strings, group anagrams together.
+
+10. Find Permutation: Given a string and a pattern, find all anagrams of the pattern in the given string.
+
+11. Longest Substring with At Most K Distinct Characters: Given a string, find the length of the longest substring that contains at most K distinct characters.
+
+12. Valid Parentheses: Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+
+13. Count and Say: Given an integer n, generate the nth count-and-say sequence.
+
+14. Repeating Substring Pattern: Given a non-empty string, check if it can be constructed by repeating a substring of itself.
+
+15. Longest Substring with At Least K Repeating Characters: Find the length of the longest substring of a given string that contains at least k repeating characters.
+
+
+
+
+
+
+
+
+
+Answer 1 : All substrings
+
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+public class Main {
+  public static void main(String[] args) {
+      String s = "abcabcbb";
+      for(int i=0;i<s.length();i++){
+        for(int j=i+1;j<s.length();j++){     
+          String res= s.substring(i,j);
+          System.out.println(res);
+        }
+        
+      }
+  }
+}
