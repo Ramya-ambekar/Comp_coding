@@ -1,5 +1,7 @@
-Question 1 : Concatenate 2 Arrays ( https://leetcode.com/problems/concatenation-of-array/description/)
+( https://leetcode.com/problems/concatenation-of-array/description/)
 
+
+Question 1 : Concatenate 2 Arrays 
 class Solution {
     public int[] getConcatenation(int[] nums) {
         int[] ans = new int[nums.length*2];
@@ -10,5 +12,21 @@ class Solution {
         }
         
         return ans;
+    }
+}
+
+Question 2 : Shuffle Array
+
+class Solution {
+    public int[] shuffle(int[] nums, int n) {
+        int[] ans = new int[nums.length];
+        int i=0;         
+            for(int j=0;j<n;j++){
+                    ans[i] = nums[j];                 
+                    ans[i+1] = nums[j+n];                 
+                    i += 2;
+            }
+        return ans;
+        
     }
 }
