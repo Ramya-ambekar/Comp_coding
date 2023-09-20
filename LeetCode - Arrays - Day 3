@@ -42,3 +42,35 @@ class Solution {
     }
 
 }
+
+
+
+
+Question 2:
+
+2535. Difference Between Element Sum and Digit Sum of an Array
+
+
+class Solution {
+    public int differenceOfSum(int[] nums) {
+        int sum1 = 0;
+        int sum2= 0;
+        int result = 0;
+
+        for(int i=0;i<nums.length;i++){
+            String num = String.valueOf(nums[i]);
+            int val = nums[i];
+            sum1 += val;
+            while(val>0){
+                int rem = val  % 10;
+                sum2 = sum2 + rem;
+                val = val /10;   
+                System.out.println(sum2);
+            }
+            
+        }
+        result = Math.abs(sum2 - sum1);
+
+        return result;
+    }
+}
