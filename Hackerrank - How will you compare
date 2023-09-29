@@ -1,0 +1,33 @@
+
+public class Main{
+    public static void main(String args[]) {
+      String msg = "as9es5ment time ne2ds shell seaside a";
+        String[] words = msg.split(" ");
+        StringBuilder res = new StringBuilder();
+
+        for(int i=words.length-1;i>=0;i--){
+            String word = words[i];
+            StringBuilder decryptedWord = new StringBuilder();
+            
+            char[] chars = word.toCharArray();
+            for (int j=0;j<chars.length;j++) {
+            if (Character.isDigit(chars[j])) {
+              int val = Integer.parseInt(String.valueOf(chars[j]));
+              for(int k=1;k<val;k++){
+                decryptedWord.append(chars[j-1]);
+              }     
+            } else {
+                decryptedWord.append(chars[j]);
+            }
+        }
+            res.append(decryptedWord).append(" ");
+        }
+
+
+        System.out.println(res.toString().trim());
+        
+        
+    }
+}
+
+Output : a seaside shell needs time asssssssssesssssment
