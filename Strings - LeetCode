@@ -18,3 +18,34 @@ class Solution {
         return String.join(" ",result);
     }
 }
+
+541. Reverse String II
+
+Example 1:
+
+Input: s = "onetwotenzero", k = 3
+Output: "enotwonetzero"
+
+
+class Solution {
+    public String reverseStr(String s, int k) {
+        int start =0;
+        int n = s.length()-1;
+        char[] chars = s.toCharArray();
+        for(int i=0;i<n;i=i+(2*k)){
+            start =i;
+            int end = Math.min(start+k-1,n);
+            char temp;
+            while(start<end){
+                temp = chars[start];
+                chars[start] = chars[end];
+                chars[end] = temp;
+                start++;
+                end--;
+            }
+        }
+
+        return new String(chars);
+
+        }
+}
