@@ -49,3 +49,33 @@ class Solution {
 
         }
 }
+
+
+2325. Decode the Message
+
+Input: key = "the quick brown fox jumps over the lazy dog", message = "vkbs bs t suepuv"
+Output: "this is a secret"
+
+class Solution {
+    public String decodeMessage(String key, String message) {
+        StringBuilder res = new StringBuilder();
+        HashMap<Character,Character> map = new HashMap<>();
+        key = key.replaceAll(" ","");
+        char ch = 'a';
+        for(char c : key.toCharArray()){
+            if(!map.containsKey(c)){
+                map.put(c,ch++);
+            }
+        }
+        
+        for(char i : message.toCharArray()){
+            if(map.containsKey(i)){
+                res.append(map.get(i));
+            }else{
+                res.append(i);
+            }
+        }
+
+        return res.toString();
+    }
+}
