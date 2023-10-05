@@ -79,3 +79,35 @@ class Solution {
         return res.toString();
     }
 }
+
+
+
+1684. Count the Number of Consistent Strings
+
+Input: allowed = "ab", words = ["ad","bd","aaab","baa","badab"]
+Output: 2
+Explanation: Strings "aaab" and "baa" are consistent since they only contain characters 'a' and 'b'.
+
+
+class Solution {
+    public int countConsistentStrings(String allowed, String[] words) {
+        int len = allowed.length();
+        int count =0;
+        HashSet<Character> set = new HashSet<>();
+        for(int i=0;i<allowed.length();i++){
+            set.add(allowed.charAt(i));
+        }
+        for(String word : words){
+            boolean flag = true;
+            for(int i=0;i<word.length();i++){
+                if(!set.contains(word.charAt(i))){
+                    flag = false;
+                }
+            }
+
+            if(flag) count++;
+        }
+
+        return count;
+    }
+}
